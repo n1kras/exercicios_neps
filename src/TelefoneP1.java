@@ -8,6 +8,7 @@ public class TelefoneP1 {
 
         System.out.println("O telefone que voce digitou: " + entrada);
         System.out.println("Telefone convertido: " + converteLetraEmNumero(entrada.toLowerCase()));
+        sc.close();
     }
 
     public static String converteLetraEmNumero(String entrada) {
