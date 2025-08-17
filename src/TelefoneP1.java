@@ -1,14 +1,31 @@
 import java.util.Scanner;
 
+// ----|----* Bem-vindo ao conversor! *----|----
+// Nosso intuito é converter um número de telefone que possui letras no seu conteúdo (ex. 0800-FALE-SBC)
+// para um número de telefone que possui somente dígitos! Porém,
+// para manter a leitura do telefone fácil, manteremos os hífens(-).
+
 public class TelefoneP1 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        while(true) {
+            String entrada;
+            Scanner sc = new Scanner(System.in);
 
-        String entrada = sc.next();
+            System.out.println("----|----* Bem-vindo ao conversor! *----|----");
+            System.out.println("Insira o telefone a ser convertido, lembre-se de não usar caracteres especiais além do hifen(-)");
+            System.out.println("ou digite SAIR para encerrar o programa. ");
+            System.out.println("Insira aqui: ");
 
-        System.out.println("O telefone que voce digitou: " + entrada);
-        System.out.println("Telefone convertido: " + converteLetraEmNumero(entrada.toLowerCase()));
-        sc.close();
+            entrada = sc.nextLine();
+            entrada = entrada.toLowerCase();
+
+            if (entrada.equals("sair")) {
+                sc.close();
+                break;
+            }
+
+            System.out.println("Telefone convertido: " + converteLetraEmNumero(entrada));
+        }
     }
 
     public static String converteLetraEmNumero(String entrada) {
